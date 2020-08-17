@@ -1,0 +1,122 @@
+#todo-entry-container{
+    display: flex;
+    flex-wrap: wrap;
+
+    #description{
+        width: 100%;
+        height: 7rem;
+        padding: 15px;
+        textarea{
+            all: unset;
+            width: 100%;
+        }
+        border-bottom: 1px solid lightgray;
+    }
+
+    #category{
+        
+        select {
+            border:none;
+            width: 100%;
+            font-size: 1rem;
+        }
+        
+        padding: 15px;
+        flex-grow: 1;
+    }
+
+    #loc{
+        width: 1px;
+        background-color: lightgray;
+    }
+
+    #duedate{
+       
+        flex-grow: 1;
+        input{
+            all: unset;
+        }
+        
+        padding: 15px;
+    }
+
+    #bottom-loc{
+        height: 1px;
+        background-color: lightgray;
+        width: 100%;
+    }
+
+}
+
+#button-container{
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    padding: 25px;
+    flex-wrap: wrap;
+    border-bottom: 1px solid lightgray;
+
+    #add-task{
+        background-color: rgb(68, 68, 68);
+        color: white;
+        padding: 15px;
+        width: 200px;
+        height: 35px;
+        button{
+            all: unset;
+            i{
+                font-size: 30px;
+                margin: auto auto;
+            }
+            span{
+                font-size: 20px;
+                margin: auto auto;
+            }
+        }
+    }
+
+    #delete-tasks{
+        background-color: rgb(219, 71, 47);
+        color: white;
+        padding: 15px;
+        width: 200px;
+        height: 35px;
+        button{
+            all: unset;
+            i{
+                font-size: 30px;
+                margin: auto auto;
+            }
+            span{
+                font-size: 20px;
+                margin: auto auto;
+            }
+        }
+    }
+
+}
+
+.todos-container{
+    display: flex;
+    align-content: center;
+    justify-content: space-between;
+
+    div{
+        padding: 30px;
+    }
+    .todo-desc{
+        
+    }
+
+    .todo-category{
+        width: 100px;
+        height: 10px;
+        background-color: rgb(142, 33, 168);
+        vertical-align: middle;
+        margin-top: auto;
+        margin-bottom: auto;
+        margin-right: 50px;
+    }
+
+    border-bottom: 1px solid lightgray;
+}

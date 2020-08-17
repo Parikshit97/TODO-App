@@ -1,0 +1,77 @@
+<link rel="stylesheet" href="/css/todo-page.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<form method="post">
+    <div id="todo-entry-container">
+        <div id="description">
+            <h3>DESCRIPTION</h3>
+            <!-- text area for description in todo app -->
+            <textarea name="description" id="" cols="30" rows="10" placeholder="What do you need to do?"></textarea>
+        </div>
+        <div id="category">
+            <h3>CATEGORY</h3>
+            <!-- select tag for options in choosing the category -->
+            <select name="category" id="">
+                <option value="NO">Choose a category</option>
+                <option value="PERSONAL">Personal</option>
+                <option value="WORK">Work</option>
+                <option value="SCHOOL">School</option>
+                <option value="CLEANING">Cleaning</option>
+                <option value="OTHER">Other</option>
+              </select>
+        </div>
+        <div id="loc">
+
+        </div>
+        <div id="duedate">
+            <h3>DUE DATE</h3>
+            <input type="date" name="duedate" id="">
+        </div>
+        <div id="bottom-loc">
+
+        </div>
+    </div>
+
+    <div id="button-container">
+
+        <div id="add-task">
+             <!-- separate button for addition of todos inside a form -->
+            <button type="submit" formaction="/createTodo">
+                <i class="fa fa-plus" aria-hidden="true"></i>
+                <span>
+                    ADD TASK
+                </span>
+            </button>
+        </div>
+        <!-- <div id="invisible-loc">
+
+        </div> -->
+        <div id="delete-tasks">
+            <!-- separate button for deletion of todos inside a form -->
+            <button type="submit" formaction="/deleteTodos">
+                <i class="fa fa-trash" aria-hidden="true"></i>
+                <span>
+                    DELETE TASKS
+                </span>
+             </button>   
+        </div>
+
+    </div>
+    <div id="all-tasks">
+        <!-- fecthing todos for display, all todos are set inside the locals object -->
+        <% for( todo of todos) {%>
+            <% if(todo.category!='NO') {%>
+                <div class="todos-container" id="todo-<%=todo.id%>">
+                    <div class="todo-desc"><p><span><input type="checkbox" name="delTodos" value="<%=todo.id%>" id=""></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<%= todo.description %><br><div style="margin-left: 18px;"><%=todo.date %></div></p></div>
+                    <div class="todo-category"><p style="text-align: center; margin: auto auto auto auto; color: white; "><%= todo.category %></p></div>
+                </div>
+            <% } else {%>
+                <div class="todos-container" id="todo-<%=todo.id%>">
+                    <div class="todo-desc"><p><span><input type="checkbox" name="delTodos" value="<%=todo.id%>" id=""></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<%= todo.description %><br><div style="margin-left: 18px;"><%=todo.date %></div></p></div>
+                </div>
+            <% } %>
+        <% }%>
+    </div>
+</form>
+
+    
+
